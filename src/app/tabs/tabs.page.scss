@@ -1,0 +1,13 @@
+ion-tab-button {
+    --color: var(--ion-color-medium);
+}
+
+ion-badge {
+    top: 5px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    left: calc(50% + 15px);
+    padding-inline: 0px;
+}

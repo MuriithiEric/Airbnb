@@ -1,0 +1,17 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "academyDesign",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {},
+  "server": {
+    "url": "http://192.168.2.114:8101",
+    "cleartext": true
+  }
+}

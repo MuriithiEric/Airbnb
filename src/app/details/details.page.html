@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar #toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="solid" shape="round" color="light" routerLink="/tabs/tab1/list">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button fill="solid" shape="round" color="light">
+        <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="solid" shape="round" color="light">
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollEvents="true" [appParallax]="img" [useOffset]="false"
+[appFadeHeader]="toolbar" appDynamicStatusBar>
+  <div #img>
+    <div class="overlay"></div>
+    <ion-slides *ngIf="house">
+      <ion-slide *ngFor="let image of house.images">
+        <img [src]="image">
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div *ngIf="house" class="content ion-padding">
+    <ion-row>
+      <ion-col size="12">
+        <h3>{{ house.title }}</h3>
+      </ion-col>
+      <ion-col size="12">
+        <ion-icon name="star" color="primary"></ion-icon>
+        {{ house.stars }} <ion-text color="medium">({{ house.ratings }}) · {{ house.area }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+      <div class="divider"></div>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col size="9">
+          <h3>{{ house.category }} hosted by {{ house.host.name }}</h3>
+        </ion-col>
+        <ion-col size="3" class="ion-text-end">
+          <img class="host-img" [src]="house.host.img">
+        </ion-col>
+        <ion-col size="12">
+          <ion-text color="medium">{{ house.rooms.join(' · ') }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <div class="divider"></div>
+
+      <ion-item *ngFor="let h of house.highlights" lines="none">
+        <ion-icon [name]="h.icon" slot="start"></ion-icon>
+        <ion-label class="ion-text-wrap">
+          <b>{{ h.title }}</b><br>
+          <ion-text color="medium">{{ h.desc }} </ion-text>
+        </ion-label>
+      </ion-item>
+      <div class="divider"></div>
+
+      <ion-text>
+        {{ house.info }}
+      </ion-text>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row *ngIf="house" class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-label color="dark">Add dates for price</ion-label><br>
+        <ion-icon name="star" color="primary"></ion-icon>
+        {{ house.stars }} <ion-text color="medium">({{ house.ratings }})</ion-text>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-button color="primary">Check availability</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

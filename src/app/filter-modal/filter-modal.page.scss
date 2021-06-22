@@ -1,0 +1,13 @@
+ion-checkbox {
+  --border-radius: 4px;
+}
+
+.notch {
+  width: 60px;
+  height: 3px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--ion-color-medium);
+}

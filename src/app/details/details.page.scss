@@ -1,0 +1,45 @@
+.divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: var(--ion-color-medium);
+}
+
+.host-img {
+  border-radius: 50%;
+  height: 50px;
+}
+
+ion-content {
+  position: absolute;
+  --background: #fff;
+}
+
+.content {
+  background: #fff;
+  position: absolute;
+  padding-bottom: 150px;
+}
+
+.overlay {
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  opacity: 0;
+}
+
+ion-header>ion-toolbar {
+  --background: transparent;
+  --border-color: transparent;
+}
+
+ion-toolbar {
+  ion-icon {
+    font-size: 20px;
+  }
+}

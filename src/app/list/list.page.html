@@ -1,0 +1,62 @@
+<ion-header class="ion-no-border">
+  <div class="search-box" #searchbox [class.overlay-box]="!isOpen">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="4" class="ion-text-left">
+        <ion-button fill="clear" color="dark" routerLink="/tabs/tab1">
+          <ion-icon name="chevron-back" slot="icon-only"></ion-icon>
+        </ion-button>
+        <ion-label color="dark">Münster</ion-label>
+      </ion-col>
+      <ion-col size="8" class="ion-justify-content-end">
+        <ion-label color="medium" class="border-right">Add dates · 2 guests</ion-label>
+        <ion-button fill="clear" color="dark" class="ion-padding-left" (click)="openFilter()">
+          <ion-icon name="options-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-header>
+
+<div class="map-container">
+  <div #map style="width: 100%; height:100%;"></div>
+</div>
+
+<ion-content #drawer [scrollY]="isOpen">
+
+  <div class="ion-text-center notch" tappable (click)="toggleDrawer()">
+    <ion-button fill="clear" expand="full" size="small">
+      <div class="drawer-pull"></div>
+    </ion-button>
+    <ion-label color="dark"><b>300+ places to stay</b>
+    </ion-label>
+  </div>
+
+  <ion-row *ngFor="let house of data" class="ion-padding" routerLink="/details">
+    <ion-col size="12">
+      <ion-slides pager="true">
+        <ion-slide *ngFor="let image of house.images">
+          <img [src]="image">
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-icon name="star" color="primary"></ion-icon>
+      {{ house.stars }} <ion-text color="medium">({{ house.ratings }})</ion-text>
+    </ion-col>
+    <ion-col size="12">
+      <ion-label>
+        {{ house.category }} {{ house.area }}<br>
+        {{ house.title }}
+      </ion-label>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button color="dark">
+      Map <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

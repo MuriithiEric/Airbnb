@@ -1,0 +1,55 @@
+<ion-header>
+  <div class="notch" tapapble (click)="close()"></div>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="close()" color="dark">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Filters</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>
+        Popular Filters
+        <p>These are some of the filters people travelling use most often</p>
+      </ion-label>
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-label>Heating</ion-label>
+      <ion-checkbox slot="end" color="dark"></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Kitchen</ion-label>
+      <ion-checkbox slot="end" color="dark"></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Free parking</ion-label>
+      <ion-checkbox slot="end" color="dark"></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Entire place</ion-label>
+      <ion-checkbox slot="end" color="dark"></ion-checkbox>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Pets allowed</ion-label>
+      <ion-checkbox slot="end" color="dark"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-row class="ion-align-items-center">
+      <ion-col size="6">
+        <ion-button fill="clear" color="dark">Clear all</ion-button>
+      </ion-col>
+      <ion-col size="6" class="ion-text-center">
+        <ion-button color="dark">Show 300+ stays</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
